@@ -11,4 +11,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"./menu.json":"NkM5","../templates/menu.hbs":"dgbP"}],"Focm":[function(require,module,exports) {
 "use strict";require("./js/main.js");
 },{"./js/main.js":"d6sW"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-10-food-service/src.d202f71e.js.map
+//# sourceMappingURL=/parcel-project-template/src.206c4608.js.map
