@@ -26,3 +26,5 @@ function addItemToList(menuJson) {
 }
 
 menuListEl.insertAdjacentHTML('beforeend', itemEl);
+
+themeSwitchInput.addEventListener('change', changeThemeOfPage);
