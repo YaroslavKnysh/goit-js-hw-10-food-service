@@ -22,7 +22,7 @@ const Theme = {
 
 function addItemToList(menuJson) {
   return menuTpl({ menuJson });
-  //   return menuJson.map(menuTpl).join('');
+  //  (Вариант, если в файле.hbs не делать через each) return menuJson.map(menuTpl).join('');
 }
 
 menuListEl.insertAdjacentHTML('beforeend', itemEl);
