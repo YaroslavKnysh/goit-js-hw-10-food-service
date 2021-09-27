@@ -6,14 +6,6 @@ const body = document.querySelector('body');
 const menuListEl = document.querySelector('.js-menu');
 const themeSwitchInput = document.querySelector('.theme-switch__toggle');
 const themeSwitchMarker = document.querySelector('.theme-switch__marker');
-// console.log(themeSwitchControl);
-console.log(themeSwitchInput.checked);
-// console.log(themeSwitchMarker);
-// console.log(menuListEl);
-// console.log(menuTpl);
-// console.log(menuJson);
-// console.log(body);
-// console.log(menuTpl({ menuJson }));
 
 const itemEl = addItemToList(menuJson);
 const Theme = {
