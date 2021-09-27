@@ -2,23 +2,25 @@ import menuJson from './menu.json';
 import menuTpl from '../templates/menu.hbs';
 
 const themeSwitchControl = document.querySelector('.theme-switch__control');
+const body = document.querySelector('body');
 const menuListEl = document.querySelector('.js-menu');
 const themeSwitchInput = document.querySelector('.theme-switch__toggle');
 const themeSwitchMarker = document.querySelector('.theme-switch__marker');
-console.log(themeSwitchControl);
-console.log(themeSwitchInput);
-console.log(themeSwitchMarker);
-console.log(menuListEl);
-console.log(menuTpl);
-console.log(menuJson);
-
-console.log(menuTpl({ menuJson }));
+// console.log(themeSwitchControl);
+console.log(themeSwitchInput.checked);
+// console.log(themeSwitchMarker);
+// console.log(menuListEl);
+// console.log(menuTpl);
+// console.log(menuJson);
+// console.log(body);
+// console.log(menuTpl({ menuJson }));
 
 const itemEl = addItemToList(menuJson);
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
+body.classList.add(Theme.LIGHT);
 
 function addItemToList(menuJson) {
   return menuTpl({ menuJson });
@@ -28,3 +30,23 @@ function addItemToList(menuJson) {
 menuListEl.insertAdjacentHTML('beforeend', itemEl);
 
 themeSwitchInput.addEventListener('change', changeThemeOfPage);
+
+// =======Доп вариант=======
+// function changeThemeOfPage(e) {
+//   if ((e.checked = true)) {
+//     body.classList.toggle('dark-theme');
+//   }
+// }
+function changeThemeOfPage(e) {
+  if (e.target.checked) {
+    body.classList.replace(Theme.LIGHT, Theme.DARK);
+    localStorage.setItem('theme', body.className);
+  } else {
+    body.classList.replace(Theme.DARK, Theme.LIGHT);
+    localStorage.setItem('theme', body.className);
+  }
+}
+body.className = localStorage.getItem('theme');
+if (body.className === Theme.DARK) {
+  themeSwitchInput.checked = true;
+}
