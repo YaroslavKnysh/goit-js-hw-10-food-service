@@ -23,7 +23,7 @@ menuListEl.insertAdjacentHTML('beforeend', itemEl);
 
 themeSwitchInput.addEventListener('change', changeThemeOfPage);
 
-// =======Доп вариант=======
+// =======Доп вариант========
 // function changeThemeOfPage(e) {
 //   if ((e.checked = true)) {
 //     body.classList.toggle('dark-theme');
