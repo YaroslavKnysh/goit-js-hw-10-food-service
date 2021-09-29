@@ -32,12 +32,14 @@ themeSwitchInput.addEventListener('change', changeThemeOfPage);
 function changeThemeOfPage(e) {
   if (e.target.checked) {
     body.classList.replace(Theme.LIGHT, Theme.DARK);
+    localStorage.setItem('theme', body.className);
   } else {
     body.classList.replace(Theme.DARK, Theme.LIGHT);
+    localStorage.setItem('theme', body.className);
   }
-  localStorage.setItem('theme', body.className);
 }
-body.className = localStorage.getItem('theme');
-if (body.className === Theme.DARK) {
+let bodyСlassName = localStorage.getItem('theme');
+if (bodyСlassName === Theme.DARK) {
   themeSwitchInput.checked = true;
+  body.className = Theme.DARK;
 }
